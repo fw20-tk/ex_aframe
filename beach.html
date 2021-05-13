@@ -44,13 +44,12 @@ btnStop.addEventListener("click", (e) => {        // クリックされたら
   }
 
   AFRAME.registerComponent('linkbox', {
-    init: function () {
-      console.log(this);
-      const element = this.el;
-      element.addEventListener('mouseenter', function () {
+    init: function () {  //aframeのコンポーネントの考え方
+      console.log(this);　//aframeのコンポーネントの考え方
+      const element = this.el;　　//aframeのコンポーネントの考え方
+      element.addEventListener('mouseenter', function () {　//マウスの代わりに視線でクリック
         console.log('mouseenter');
-        document.getElementById("text")
-        setTimeout(toLink, 5000);
+        setTimeout(toLink, 5000); //toLink関数を実行
         
       });
     }

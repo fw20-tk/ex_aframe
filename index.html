@@ -19,6 +19,8 @@
   <!-- リンク用のbox -->
   <a-box id="link" position="1.5 0 -1" scale="0.2 0.2 0.2" color="yellow" linkbox></a-box>
   <!-- 再生・停止ボタンを押すための視線カーソル（スマホ用） -->
+
+  <!-- TODO:視点 -->
   <a-camera>
     <a-cursor fuse="true" fuse-timeout="1000"></a-cursor>
   </a-camera>
@@ -44,13 +46,12 @@ btnStop.addEventListener("click", (e) => {        // クリックされたら
   }
 
   AFRAME.registerComponent('linkbox', {
-    init: function () {
-      console.log(this);
-      const element = this.el;
-      element.addEventListener('mouseenter', function () {
+    init: function () {  //aframeのコンポーネントの考え方
+      console.log(this);　//aframeのコンポーネントの考え方
+      const element = this.el;　　//aframeのコンポーネントの考え方
+      element.addEventListener('mouseenter', function () {　//マウスの代わりに視線でクリック
         console.log('mouseenter');
-        document.getElementById("text")
-        setTimeout(toLink, 5000);
+        setTimeout(toLink, 5000); //toLink関数を実行
         
       });
     }
